@@ -1,3 +1,6 @@
+mod experiment;
+pub mod days;
+
 fn main() {
-    println!("Hello, world!");
+    experiment::experiment();
 }
