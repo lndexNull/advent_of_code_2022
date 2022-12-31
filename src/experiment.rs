@@ -5,7 +5,7 @@ use std::cmp::Ordering;
 pub fn experiment() {
 
     let mut rng = thread_rng();
-    let secret_number: i32 = rng.gen_range(-100..100);
+    let secret_number = rng.gen_range(-100..100);
 
     println!("Guess the number!\n");
     
