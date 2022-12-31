@@ -1,4 +1,4 @@
-use std::io;
+use std::{io};
 
 mod experiment;
 mod days;
@@ -12,13 +12,18 @@ fn main() {
         .read_line(&mut path)
         .unwrap();
     
-
-    if cmp_str == path { //TODO figure out how to compare strings properly
-        println!("experiment  {}    {}", path, cmp_str);
+    remove_whitespace(&mut path);
+    
+    if cmp_str.eq(&path) {
+        println!("\n\nexperiment  {} {}", path, cmp_str);
         experiment::experiment();
     } else {
-        println!("days  {}    {}", path, cmp_str);
+        println!("\n\ndays  {} {}", path, cmp_str);
         days::day_one::day1_task1();
         days::day_one::day1_task2();
     }
+}
+
+fn remove_whitespace(s: &mut String) {
+    s.retain(|c| !c.is_whitespace());
 }
